@@ -37,6 +37,11 @@ main()
 	
 	adjlist = adjacencylist();
 	printgraph ( adjlist );
+	/*for (i=0;i<TOTSTATES;i++)
+		{
+		
+		pred[i] = NIL;
+		}*/
 	//printallstates(STARTST,ENDST,prd);
 }
 
@@ -79,7 +84,8 @@ int validedges(int i, int j)
 	 s= (( (r) >> (0) ) & 1) +(( (r) >> (1) ) & 1) +(( (r) >> (2) ) & 1) +(( (r) >> (3) ) & 1) ;
 
 	int forbidden = validornot(j);
-	return(Fmoves && !forbidden && s < 3 && moveswithF);
+	int forbstartstate= validornot(i);
+	return(Fmoves && !forbidden && s < 3 && moveswithF && !forbstartstate);
 
 
 }
