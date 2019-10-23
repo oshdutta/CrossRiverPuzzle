@@ -103,7 +103,7 @@ NODE** adjacencylist( )
 	for (i=0;i<TOTSTATES;i++)
 		{
 		a[i] = NULL;    /* initialize adjacency list for i to be empty */
-		for (j=TOTSTATES-1;j>=0;j--)
+		for (j=TOTSTATES-1;j>=i;j--)
 			{
 			if ( !validedges(i,j) )
 				continue;  /* go on to next j if i-->j not edge */
